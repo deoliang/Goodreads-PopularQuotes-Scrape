@@ -23,7 +23,7 @@ const Quotes = [
   */
 ]
 
-puppeteer.launch({headless:false}).then(async browser => {
+puppeteer.launch().then(async browser => {
     const page = await browser.newPage();
     //login to avoid popups
     await page.goto(loginURL);
