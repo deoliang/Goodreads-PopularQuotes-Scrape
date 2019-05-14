@@ -38,7 +38,7 @@ puppeteer.launch().then(async browser => {
     let endingPage = 3; //page to scrape up to inclusive, last page is 100
     
     while(currentPage<=endingPage){
-        html = await page.content()
+        let html = await page.content()
         await $('.quoteText',html).each(function(i, elem) {
             let quoteAuthorPair = ($(this).text().split('―'))
             let authorTitlePair = quoteAuthorPair[1].trim().split(',')
